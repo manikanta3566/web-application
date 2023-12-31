@@ -19,6 +19,8 @@ pipeline {
         stage('Deploy to Tomcat') {
             steps {
                 script {
+
+                    sh 'java --version'
                     // Tomcat configuration
                     def tomcatUrl = 'http://localhost:9090'
                     def tomcatManagerUser = 'root'
