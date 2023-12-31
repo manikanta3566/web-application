@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Tomcat configuration
-                    def tomcatUrl = 'http://localhost:9090/'
+                    def tomcatUrl = 'http://localhost:9090'
                     def tomcatManagerUser = 'root'
                     def tomcatManagerPassword = 'root'
                     def warFileName = 'web-application'
