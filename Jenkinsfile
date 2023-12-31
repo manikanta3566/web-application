@@ -21,7 +21,7 @@ pipeline {
                     def tomcatUrl = 'http://localhost:9090/'
                     def tomcatManagerUser = 'root'
                     def tomcatManagerPassword = 'root'
-                    def warFileName = 'web-application.war'
+                    def warFileName = 'web-application'
 
                     // Deploy to Tomcat
                     withCredentials([usernamePassword(credentialsId: 'adcdb82f-8ab0-4c05-932b-bdfe05566092', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
