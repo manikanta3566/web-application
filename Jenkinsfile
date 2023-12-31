@@ -23,10 +23,11 @@ pipeline {
                     def tomcatManagerPassword = 'root'
                     def warFileName = 'web-application'
 
-                    // Deploy to Tomcat
-                    withCredentials([usernamePassword(credentialsId: 'adcdb82f-8ab0-4c05-932b-bdfe05566092', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        sh "curl -v --user ${USERNAME}:${PASSWORD} --upload-file target/${warFileName} ${tomcatUrl}/manager/text/deploy?path=/${warFileName}&update=true"
-                    }
+
+                    // Deploy to Tomcat with context path
+                     withCredentials([usernamePassword(credentialsId: 'adcdb82f-8ab0-4c05-932b-bdfe05566092', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                       sh "curl -v --user ${USERNAME}:${PASSWORD} --upload-file target/${warFileName} ${tomcatUrl}/manager/text/deploy?path=web-application&update=true"
+                      }
                 }
             }
         }
